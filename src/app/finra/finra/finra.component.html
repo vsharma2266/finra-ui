@@ -1,0 +1,23 @@
+<div *ngIf="loader" class=loader>Crunching Numbers...</div>
+<div class="form">
+  <form  [formGroup]="inputForm" (ngSubmit)="submit()">
+    <label>Phone Number</label>
+    <input class="phoneInput" type="number"  formControlName="phoneNumber" placeholder="Please add phone number">
+    <label>Throttle</label>
+    <input  type="number" formControlName="throttle" placeholder="Throttle">
+    <button type="submit" [class.disabled]="inputForm.get('phoneNumber').invalid || !inputForm.get('phoneNumber').value"  [disabled]="inputForm.get('phoneNumber').invalid || !inputForm.get('phoneNumber').value">Submit</button>
+    <p *ngIf="inputForm.get('phoneNumber').errors && !inputForm.get('phoneNumber').untouched">{{ inputForm.get('phoneNumber').errors['illegalLength']}}</p>
+  </form>
+</div>
+  
+
+<div *ngIf="currentCombinations.length">
+  <div class="combination" *ngFor="let combination of currentCombinations">
+    <span>{{ combination }}</span>
+  </div>
+</div>
+
+<div class="pagination">
+  <button *ngIf="isNextActive()" (click)="getNextCombinations()">Next</button>
+  <button *ngIf="isPreviousActive()" (click)="getPreviousCombinations()">Previous</button>
+</div>

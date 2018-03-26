@@ -1,0 +1,72 @@
+.loader {
+    background-color: #000000bd;
+    color: #f5deb3;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    align-items: center;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input {
+    padding: 4px;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+    padding: 7px 12px;
+    color: #fefafa;
+    background: #4CAF50;
+    border: 0;
+    margin: 6px;
+}
+
+.combination {
+    border: solid 2px lightblue;
+    margin: 10px;
+    padding: 4px 12px;
+    width: 250px;
+    justify-content: center;
+    display: flex;
+    margin: 1px auto;
+}
+
+.combination span {
+    color: #f5deb3;
+}
+
+form {
+    text-align: center;
+}
+
+form .disabled {
+    background-color: #8b7e7eb0;
+    color: #8b7e7eb0;}
+
+.pagination {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+form p {
+    color: #ff0000;
+    margin: 0;
+}
+
+label {
+    color: #f5deb3;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
